@@ -1,5 +1,5 @@
 # Apigee Environment Configuration Migration Tool
-Is a commandline tool built on NodeJs used to migrate Apigee environment configurations (KeyValueMaps, Target Servers) across different environments. It leverages the JSON request structure used by Apigee Management APIs. 
+This a commandline tool built on NodeJs to migrate Apigee environment configurations (KeyValueMaps, Target Servers) across different environments. It leverages the JSON request structure used by Apigee Management APIs. 
 
 ##Features
 1. KeyValueMap (KVM)
@@ -27,58 +27,58 @@ Is a commandline tool built on NodeJs used to migrate Apigee environment configu
 
 Sample KVM json file - 
 
-[
-	{   
-	 "name" : "KVM_1",
-	 "entry" : [ 
-	  {
-	   "name" : "Key1",
-	   "value" : "value_1"
-	  },
-	  {
-	   "name" : "Key2",
-	   "value" : "value_2"
-	  },
-	  {
-	   "name" : "Key3",
-	   "value" : "value_3"
-	  }  
-	 ]
-	},
-	{   
-	 "name" : "KVM_2",
-	 "entry" : [ 
-	  {
-	   "name" : "Key4",
-	   "value" : "value_4"
-	  },
-	  {
-	   "name" : "Key5",
-	   "value" : "value_5"
-	  } 
-	 ]
-	}
-]
+[<br />
+	{  <br /> 
+	 "name" : "KVM_1",<br />
+	 "entry" : [ <br />
+	  {<br />
+	   "name" : "Key1",<br />
+	   "value" : "value_1"<br />
+	  },<br />
+	  {<br />
+	   "name" : "Key2",<br />
+	   "value" : "value_2"<br />
+	  },<br />
+	  {<br />
+	   "name" : "Key3",<br />
+	   "value" : "value_3"<br />
+	  }  <br />
+	 ]<br />
+	},<br />
+	{   <br />
+	 "name" : "KVM_2",<br />
+	 "entry" : [ <br />
+	  {<br />
+	   "name" : "Key4",<br />
+	   "value" : "value_4"<br />
+	  },<br />
+	  {<br />
+	   "name" : "Key5",<br />
+	   "value" : "value_5"<br />
+	  } <br />
+	 ]<br />
+	}<br />
+]<br />
 
 - To create/update TargetServer 
 	apigee_environment_migrationtool -u <username> -f <filePath> -o <org> -e <env> -t targetserver
 
 Sample TargetServer json file -
 
-[
-	{
-  		"host": "https://www.server1.com",
-  		"isEnabled": true,
-  		"name": "Server_1",
-  		"port": 443
-	},
-	{
-  		"host": "https://www.server2.com",
-  		"isEnabled": true,
-  		"name": "Server_2",
-  		"port": 443
-	}
-]
+[<br />
+	{<br />
+  		"host": "https://www.server1.com",<br />
+  		"isEnabled": true,<br />
+  		"name": "Server_1",<br />
+  		"port": 443<br />
+	},<br />
+	{<br />
+  		"host": "https://www.server2.com",<br />
+  		"isEnabled": true,<br />
+  		"name": "Server_2",<br />
+  		"port": 443<br />
+	}<br />
+]<br />
 
 ##Help
 -u ----> Apigee Administrator Username

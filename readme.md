@@ -81,8 +81,8 @@ Sample TargetServer json file -
 ]<br />
 
 ##Help
--u ----> Apigee Administrator Username
--f ----> Path to the KVM / TargetServer JSON file
--o ----> Apigee Organization Name
--e ----> Apigee Environment (e.g. dev/test)
--t ----> Type (kvm or targetserver)
+-u ----> Apigee Administrator Username<br />
+-f ----> Path to the KVM / TargetServer JSON file<br />
+-o ----> Apigee Organization Name<br />
+-e ----> Apigee Environment (e.g. dev/test)<br />
+-t ----> Type (kvm or targetserver)<br />

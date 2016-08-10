@@ -1,0 +1,32 @@
+[
+	{   
+	 "name" : "New_Map_Test_KVM1",
+	 "entry" : [ 
+	  {
+	   "name" : "Key1",
+	   "value" : "value_three"
+	  },
+	  {
+	   "name" : "Key2",
+	   "value" : "value_four"
+	  },
+	  {
+	   "name" : "Key5",
+	   "value" : "value_four"
+	  }  
+	 ]
+	},
+	{   
+	 "name" : "New_Map_Test_KVM2",
+	 "entry" : [ 
+	  {
+	   "name" : "Key1",
+	   "value" : "value_five"
+	  },
+	  {
+	   "name" : "Key2",
+	   "value" : "value_six"
+	  } 
+	 ]
+	}
+]

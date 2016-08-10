@@ -1,0 +1,14 @@
+[
+	{
+  		"host": "https://www.test.com",
+  		"isEnabled": true,
+  		"name": "TestDataServer_Test1",
+  		"port": 443
+	},
+	{
+  		"host": "https://www.test.com",
+  		"isEnabled": true,
+  		"name": "TestDataServer_Test2",
+  		"port": 443
+	}
+]

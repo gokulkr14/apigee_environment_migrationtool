@@ -1,0 +1,20 @@
+{
+  "name": "apigee_environment_migrationtool",
+  "version": "0.0.1",
+  "description": "A command-line tool to move KVM values to Apigee environment configurations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gokulakrishnan P",
+  "license": "ISC",
+  "bin": "./app.js",
+  "dependencies": {
+    "jsonfile": "^2.3.1",
+    "minimist": "^1.2.0",
+    "readline-sync": "^1.4.4",
+    "sync-request": "^3.0.1"
+  },
+  "devDependencies": {}
+}

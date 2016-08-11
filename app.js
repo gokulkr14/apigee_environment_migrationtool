@@ -41,7 +41,6 @@ var base64Key = "Basic " + new Buffer(clientIdSecret).toString('base64');
 try{
 	if(migrateFunction == "kvm"){
 		console.log("KVM Migration has started");
-		console.log("KVM Data Length: "+requestData.length);
 		for (i=0; i<requestData.length; i++) {
 			var kvmName = requestData[i].name;
 			var responseObj = "";
@@ -91,9 +90,11 @@ try{
 	else if(migrateFunction == "targetserver"){
 		console.log("TargetServer Migration has started");
 		for(i=0;i<requestData.length;i++){
-			var targetServerName = requestData.name;
+			var targetServerName = requestData[i].name;
+			console.log("targetServerName: "+targetServerName);
 			var responseObj = "";
-			responseObj = getTargetServerDataSync(env, kvmName);
+			responseObj = getTargetServerDataSync(env, targetServerName);
+			console.log("responseObj.statusCode Get TargetServer: "+responseObj.statusCode);
 			if(responseObj.statusCode == 404){
 				var targetServerPostReqBody = requestData[i];
 				responseObj = postTargetServerDataSync(env, targetServerPostReqBody);
@@ -101,7 +102,7 @@ try{
 					console.log("New TargetServer Entity Created");
 				}
 			} else if(responseObj.statusCode === 200){
-				var targetServerName = requestData.name;
+				var targetServerName = requestData[i].name;
 				var targetServerPutReqBody = requestData[i];
 				responseObj = putTargetServerDataSync(env, targetServerName, targetServerPutReqBody);
 				if(responseObj.statusCode == 200){
@@ -110,8 +111,8 @@ try{
 				}
 			} else {
 				process.exit(1)
-				throw new Error("KVM Migration Failed with  -----> ResponseCode : "+ responseObj.statusCode)
-				console.log("KVM Migration Failed with  -----> ResponseCode : "+ responseObj.statusCode);
+				throw new Error("TargetServer Migration Failed with  -----> ResponseCode : "+ responseObj.statusCode)
+				console.log("TargetServer Migration Failed with  -----> ResponseCode : "+ responseObj.statusCode);
 			}   
 		}
 	}
@@ -123,6 +124,7 @@ try{
 
 //----------Check KVM map Available in Apigee--------->
 function getKvmByNameSync(environment,kvmMapeName){
+	console.log("Inside Get Request");
 	var getKVMDataURL = getKvmURL;
 	getKVMDataURL = getKVMDataURL.replace("{org}",org);
 	getKVMDataURL = getKVMDataURL.replace("{environment}",env);
@@ -194,6 +196,7 @@ function postNewKVMEntityDataSync(environment, kvmName, entityObjToCreate){
 //----------get TargetServer in Apigee--------------------------->
 
 function getTargetServerDataSync(environment, targetServerName){
+
 	var getTargetServerDataURL = getTargetServerURL;
 	getTargetServerDataURL = getTargetServerDataURL.replace("{org}",org);
 	getTargetServerDataURL = getTargetServerDataURL.replace("{environment}",env);

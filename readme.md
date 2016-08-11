@@ -14,7 +14,7 @@ This a commandline tool built on NodeJs to migrate Apigee environment configurat
 
 ##Installation
 
-1. Clone the project to local file system
+1. Clone the project to local file system or use npm install -g apigee_environment_migrationtool skip bleow steps
 2. Open the command prompt
 3. Navigate to the project directory
 4. npm install -g
